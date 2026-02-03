@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: preview-service
+spec:
+  selector:
+    domain: dev
+    color: green
+  ports:
+    - protocol: TCP
+      ports: 80
+      targetPort: 80

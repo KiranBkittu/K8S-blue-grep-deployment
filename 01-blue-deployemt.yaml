@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: blue
+  labels:
+    color: blue
+    domain: dev
+spec: 
+  replicas: 3 # deployment defination starts from here
+  selector:
+    matchLabels:
+      color: blue
+      domain: dev
+  template: # pod defination start from here
+    metadata:
+      labels:
+        color: blue
+        domain: dev
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25.2 # old nginx image for testing
+          #image: nginx
+
+  
